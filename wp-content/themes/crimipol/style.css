@@ -10,3 +10,183 @@
     Tags: Gym, datos, analisís, criminología, prevención, seguridad, analisís criminal
     Text Domain: crimipol
 */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap");
+
+:root {
+  /**Fuentes**/
+  --fuente-principal: "Raleway", sans-serif;
+  --fuente-heading: "Staatliches", sans-serif;
+
+  /* colores */
+  --primary: #1f618d;
+  --primary-lighten: #a9c1d1;
+  --dark-gray: #666;
+  --light-gray: #d9d9d9;
+  --black: #010101;
+  --white: #fefefe;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--fuente-principal);
+  font-size: 1.8rem;
+  line-height: 2;
+}
+
+/** Headings**/
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuente-heading);
+  margin: 0 0 5rem 0;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+h3 {
+  font-size: 3.6rem;
+}
+h4 {
+  font-size: 2.4rem;
+}
+
+/* Globales */
+
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(95%, 120rem);
+  margin: 0 auto;
+}
+
+/* Utilidades */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* Menu Header */
+.header {
+  background-color: var(--white);
+
+  border: 1px solid var(--light-gray);
+}
+.shadow {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header .header-menus {
+  display: flex;
+  gap: 5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.header .menu-principal {
+  flex: 1;
+}
+.header .menu-principal .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header .header_heading {
+  margin: 0;
+  color: #1f618d;
+}
+.menu-principal a {
+  font-family: var(--fuente-heading);
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 2.2rem;
+  padding: 0.5rem 2rem;
+}
+/* resaltar la pagina donde estamos */
+.menu-principal .current_page_item {
+  border-bottom: 2px solid var(--primary);
+}
+
+@media (min-width: 768px) {
+  .menu-principal a {
+    position: relative;
+    z-index: 1;
+  }
+  .menu-principal a::before,
+  .menu-principal a::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    background-color: var(--primary-lighten);
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform 0.6s;
+  }
+  .menu-principal a::before {
+    top: 0;
+    transform-origin: left;
+  }
+  .menu-principal a::after {
+    top: 50%;
+    transform-origin: right;
+  }
+  .menu-principal a:hover::before {
+    transform: scaleX(1);
+  }
+  .menu-principal a:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Imagen destaca inicio */
+
+.imagen.destacada {
+}
